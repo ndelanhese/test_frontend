@@ -1,6 +1,7 @@
 import React from "react";
-import { Header } from "../components/header/Header";
+import { Dashboard } from "../components/Dashboard/Dashboard";
+import { Header } from "../components/Header/Header";
 
 export default function Home() {
-  return <Header />;
+  return <Dashboard/>;
 }

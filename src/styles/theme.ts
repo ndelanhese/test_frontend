@@ -9,6 +9,10 @@ export const theme = extendTheme({
       },
     },
   },
+  fonts: {
+    heading: 'Raleway',
+    body: 'Raleway'
+  },
   colors: {
     transparent: "transparent",
     black: "#000",
