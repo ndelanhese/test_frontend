@@ -20,8 +20,6 @@ export function Header() {
   });
 
 
-  
-
   return (
     <Flex
       bg="gray.900"
