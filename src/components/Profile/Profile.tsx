@@ -1,4 +1,12 @@
-import { Avatar, Flex, Stack, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Button,
+  Flex,
+  Icon,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import {
   format,
@@ -7,6 +15,7 @@ import {
 } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
+import { MdArrowBackIos } from "react-icons/md";
 
 export function Profile() {
   const { asPath } = useRouter();
@@ -43,27 +52,36 @@ export function Profile() {
   });
 
   return (
-    <Flex align="center">
-      <Stack maxW="31rem" align="center">
-        <Avatar
-          boxSize="7.5rem"
-          name="Nathan Delanhese"
-          src="https://github.com/ndelanhese.png"
-        ></Avatar>
-        <Text align="center" fontSize="1.875rem" fontWeight="400">
-          Nathan Delanhese
-        </Text>
-        <Text as="p">
-          <Text as="span"> {publishedDateFormated} </Text>
-          <Text
-            as="time"
-            title={publishedDateFormated}
-            dateTime={publishedAt.toISOString()}
-          >
-            ({publishedDateRelativeToNow})
-          </Text>
-        </Text>
+    <>
+      <Stack mr="auto" ml={["1rem", "5rem"]}>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Button bg="transparent" border="1px solid" w="2.5rem" h="2.5rem">
+            <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
+          </Button>
+        </Link>
       </Stack>
-    </Flex>
+      <Flex>
+        <Stack maxW="31rem" align="center">
+          <Avatar
+            boxSize="7.5rem"
+            name="Nathan Delanhese"
+            src="https://github.com/ndelanhese.png"
+          ></Avatar>
+          <Text align="center" fontSize="1.875rem" fontWeight="400">
+            Nathan Delanhese
+          </Text>
+          <Text as="p">
+            <Text as="span"> {publishedDateFormated} </Text>
+            <Text
+              as="time"
+              title={publishedDateFormated}
+              dateTime={publishedAt.toISOString()}
+            >
+              ({publishedDateRelativeToNow})
+            </Text>
+          </Text>
+        </Stack>
+      </Flex>
+    </>
   );
 }
