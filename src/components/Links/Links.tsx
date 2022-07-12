@@ -23,11 +23,14 @@ export function Links() {
 
   if (isWideVersion) {
     return (
+      
       <Grid
         h="703.36px"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(4, 1fr)"
         gap={4}
+        
+        
       >
         
         <GridItem colSpan={4}>
@@ -107,11 +110,12 @@ export function Links() {
           </Box>
         </GridItem>
       </Grid>
+     
     );
   }
 
   return (
-    <Stack direction={["column", "row"]} spacing="0.7rem" p={3}>
+    <Stack direction={["column", "row"]} spacing="0.7rem" p={3} >
       <Box
         as="button"
         w="453px"
