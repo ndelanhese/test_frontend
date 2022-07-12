@@ -16,7 +16,7 @@ export function Dashboard() {
     <>
       <Header />
       <Sidebar />
-      <Stack alignItems="center" mt="6.25rem">
+      <Stack alignItems="center" mt={["3.5rem","5.25rem"]}>
         <Profile />
       </Stack>
       <Stack alignItems="center" mt="2.5rem" mb="2.5rem">

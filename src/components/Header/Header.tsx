@@ -4,6 +4,7 @@ import {
   Flex,
   Icon,
   IconButton,
+  Link,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -44,7 +45,9 @@ export function Header() {
 
       {isWideVersion && (
         <>
+          <Link href="/" style={{ textDecoration: 'none' }}>
           <Logo />
+          </Link>
           <Flex ml="auto" alignItems="center">
             <Menu />
           </Flex>
