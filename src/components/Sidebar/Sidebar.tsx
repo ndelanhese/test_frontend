@@ -29,7 +29,7 @@ export function Sidebar() {
 
   if (isDrawerSidebar) {
     return (
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="left" size="full" onClose={onClose}>
         <DrawerOverlay>
           <DrawerContent bg="gray.900" color="white" p={4}>
             <Flex>
