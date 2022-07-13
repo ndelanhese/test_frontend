@@ -11,7 +11,7 @@ interface ModalProviderProps {
 type ModalContextData = UseDisclosureReturn;
 
 // Aqui eu crio o meu contexto utilizando o react NEXT e tipo ele
-const ModalContext = createContext({} as ModalContextData);
+const ModalDrawerContext = createContext({} as ModalContextData);
 
 // esporto a function recebendo os parametros de children
 export function ModalProvider({
@@ -30,11 +30,11 @@ export function ModalProvider({
 
   return (
     //Retorno a minha context do Menu passando todos os metodos do chrakra no value
-    <ModalContext.Provider value={disClosure}>
+    <ModalDrawerContext.Provider value={disClosure}>
       {children}
-    </ModalContext.Provider>
+    </ModalDrawerContext.Provider>
   );
 }
 
 //Aqui eu crio o meu proprio hook pra não precisar ficar usando o do react
-export const useModalDrawer = () => useContext(ModalContext);
+export const useModalDrawer = () => useContext(ModalDrawerContext);
