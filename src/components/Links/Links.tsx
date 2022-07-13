@@ -85,14 +85,16 @@ export function Links() {
             color="white"
             borderRadius="15px"
           >
-            <Image
-              alt="pix image"
-              src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
-              boxSize="100px"
-              objectFit="cover"
-              w="1.75rem"
-              h="1.75rem"
-            />
+           <Stack align="center" mb="2">
+        <Image
+          alt="pix image"
+          src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
+          boxSize="100px"
+          objectFit="cover"
+          w="1.75rem"
+          h="1.75rem"
+        />
+        </Stack>
             <Text as="p">Pix</Text>
           </Box>
         </GridItem>
@@ -157,6 +159,7 @@ export function Links() {
         color="white"
         borderRadius="10px"
       >
+        <Stack align="center" mb="2">
         <Image
           alt="pix image"
           src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
@@ -165,6 +168,7 @@ export function Links() {
           w="1.75rem"
           h="1.75rem"
         />
+        </Stack>
         <Text as="p">Pix</Text>
       </Box>
       <Box
