@@ -21,18 +21,22 @@ export function Header() {
 
   return (
     <Flex
-      bg="gray.900"
+      bg={["white","gray.900"]}
       w="100%"
       h="5rem"
       p={4}
-      color="white"
+      color={["gray.900","white"]}
       alignItems="center"
     >
       {!isWideVersion && (
         <IconButton
+          border="1px solid black"
           aria-label="Open Navigation"
-          icon={<Icon as={AiOutlineMenu} />}
+          
+          icon={<Icon as={AiOutlineMenu} w="1.8rem" mt="0.5rem" />}
           fontSize={32}
+          h="3rem"
+          w="3rem"
           variant="unstyled"
           ml="auto"
           onClick={onOpen}
