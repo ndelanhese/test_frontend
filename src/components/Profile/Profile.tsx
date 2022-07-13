@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
 
 export function Profile() {
   const { asPath } = useRouter();
-const [profile, setProfile] = useState<any>()
+const [profile, setProfile] = useState<any>({})
 
   useEffect(() => {
     api.get("/profile").then((response) => {setProfile(response.data)}).catch((err) => {console.log(err)});
@@ -31,8 +31,8 @@ const [profile, setProfile] = useState<any>()
         <Stack maxW="31rem" align="center">
           <Avatar
             boxSize="7.5rem"
-            name="Nathan Delanhese"
-            src="https://github.com/ndelanhese.png"
+            name= {profile.name}
+            src={profile.avatar_url}
             _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
             style={{ transition: "0.5s" }}
           ></Avatar>
@@ -83,13 +83,13 @@ const [profile, setProfile] = useState<any>()
         <Stack maxW="31rem" align="center">
           <Avatar
             boxSize="7.5rem"
-            name="Nathan Delanhese"
-            src="https://github.com/ndelanhese.png"
+            name= {profile.name}
+            src={profile.avatar_url}
             _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
             style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
-            Nathan Delanhese
+            {profile.name}
           </Text>
           <Text as="p">
             <Text as="span"> {publishedDateFormated} </Text>

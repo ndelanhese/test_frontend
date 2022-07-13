@@ -14,6 +14,9 @@ import {
 import { FaDownload, FaPlay } from "react-icons/fa";
 import { RiExternalLinkFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import Link from "next/link";
 
 export function Links() {
   const isWideVersion = useBreakpointValue({
@@ -21,19 +24,30 @@ export function Links() {
     lg: false,
   });
 
+  const [profile, setProfile] = useState<any>({});
+
+  useEffect(() => {
+    api
+      .get("/profile")
+      .then((response) => {
+        setProfile(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   if (isWideVersion) {
     return (
-      
       <Grid
         h="703.36px"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(4, 1fr)"
         gap={4}
         p={4}
-        
       >
-        
         <GridItem colSpan={4}>
+         <Link href={""} target="_blank">
           <Box
             as="button"
             w="90vw"
@@ -45,10 +59,9 @@ export function Links() {
           >
             <Icon as={FaPlay} w="1.75rem" h="1.75rem"></Icon>
           </Box>
+          </Link>
         </GridItem>
-        
 
-        
         <GridItem colSpan={2}>
           <Box
             as="button"
@@ -85,16 +98,16 @@ export function Links() {
             color="white"
             borderRadius="15px"
           >
-           <Stack align="center" mb="2">
-        <Image
-          alt="pix image"
-          src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
-          boxSize="100px"
-          objectFit="cover"
-          w="1.75rem"
-          h="1.75rem"
-        />
-        </Stack>
+            <Stack align="center" mb="2">
+              <Image
+                alt="pix image"
+                src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
+                boxSize="100px"
+                objectFit="cover"
+                w="1.75rem"
+                h="1.75rem"
+              />
+            </Stack>
             <Text as="p">Pix</Text>
           </Box>
         </GridItem>
@@ -112,7 +125,6 @@ export function Links() {
           </Box>
         </GridItem>
       </Grid>
-     
     );
   }
 
@@ -125,8 +137,8 @@ export function Links() {
         color="white"
         borderRadius="15px"
         bgImg="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-        _hover={{transform: "scale(1.04, 1.08)", transition: "0.5s"}}
-        style={{transition: "0.5s"}}
+        _hover={{ transform: "scale(1.04, 1.08)", transition: "0.5s" }}
+        style={{ transition: "0.5s" }}
       >
         <Icon as={FaPlay} w="1.75rem" h="1.75rem"></Icon>
       </Box>
@@ -137,8 +149,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
-        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
-        style={{transition: "0.5s"}}
+        _hover={{ transform: "scale(1.1, 1.1)", transition: "0.5s" }}
+        style={{ transition: "0.5s" }}
       >
         <Icon as={FaDownload} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Download</Text>
@@ -150,8 +162,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
-        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
-        style={{transition: "0.5s"}}
+        _hover={{ transform: "scale(1.1, 1.1)", transition: "0.5s" }}
+        style={{ transition: "0.5s" }}
       >
         <Icon as={RiExternalLinkFill} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Link Externo</Text>
@@ -163,18 +175,17 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
-        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s",  }}
-        style={{transition: "0.5s"}}
+        _hover={{ transform: "scale(1.1, 1.1)", transition: "0.5s" }}
+        style={{ transition: "0.5s" }}
       >
         <Stack align="center" mb="2">
-        <Image
-          alt="pix image"
-          src="https://cdn.discordapp.com/attachments/480528577729658880/996823804439445514/Vector.svg"
-          boxSize="100px"
-          objectFit="cover"
-          w="1.75rem"
-          h="1.75rem"
-          
+          <Image
+            alt="pix image"
+            src="https://cdn.discordapp.com/attachments/480528577729658880/996823804439445514/Vector.svg"
+            boxSize="100px"
+            objectFit="cover"
+            w="1.75rem"
+            h="1.75rem"
           />
         </Stack>
         <Text as="p">Pix</Text>
@@ -186,8 +197,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
-        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
-        style={{transition: "0.5s"}}
+        _hover={{ transform: "scale(1.1, 1.1)", transition: "0.5s" }}
+        style={{ transition: "0.5s" }}
       >
         <Icon as={MdEmail} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Email</Text>
