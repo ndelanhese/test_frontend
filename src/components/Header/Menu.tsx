@@ -20,7 +20,7 @@ export function Menu() {
   if (!isWideVersion) {
     return (
       <HStack p="0.875rem 2.75rem" gap="0.625rem">
-        <Link href="/medicalProfile" >
+        <Link href="/medicalProfile">
           <LinkChakra as="a">
             <Button
               as="button"
@@ -29,6 +29,13 @@ export function Menu() {
               borderRadius="5px"
               h="2.5rem"
               w="2.5rem"
+              _hover={{
+                background: "white",
+                color: "black",
+                transform: "scale(1.2, 1.2)",
+                transition: "0.5s",
+              }}
+              style={{ transition: "0.5s" }}
             >
               <IconButton
                 aria-label="Icon one"
@@ -36,18 +43,19 @@ export function Menu() {
                 bg="transparent"
                 h="1.25rem"
                 w="1.125rem"
+                _hover={false}
               />
             </Button>
           </LinkChakra>
         </Link>
-        <ModalShare/>
+        <ModalShare />
       </HStack>
     );
   }
 
   return (
     <Stack p="0.875rem 2.75rem" gap="1rem">
-      <Link href="/medicalProfile" >
+      <Link href="/medicalProfile">
         <LinkChakra as="a" style={{ textDecoration: "none" }}>
           <Button as="button" bg="transparent" h="1rem" w="1rem">
             <IconButton
@@ -55,13 +63,13 @@ export function Menu() {
               as={AiFillMedicineBox}
               bg="transparent"
               h="1.125rem"
-              w="1.125rem" 
+              w="1.125rem"
             />
             Perfil Médico
           </Button>
         </LinkChakra>
       </Link>
-      <ModalShare/>
+      <ModalShare />
     </Stack>
   );
 }

@@ -23,7 +23,13 @@ export function Logo() {
             ml={["0.4rem", "2.25rem"]}
             mb={["1rem", "2.2rem"]}
           >
-            <Text as={"span"} h={["4", "6"]} fontSize={["1rem", "2.2rem"]}>
+            <Text
+              as={"span"}
+              h={["4", "6"]}
+              fontSize={["1rem", "2.2rem"]}
+              _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
+              style={{ transition: "0.5s" }}
+            >
               e
               <Text as={"span"} color={"green.100"}>
                 /

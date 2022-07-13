@@ -33,11 +33,11 @@ export function MedicalInformations() {
         <HStack gap={14}>
           <Stack>
             <Text>Peso</Text>
-            <Text fontSize="1.5rem">68Kg</Text>
+            <Text fontSize="1.5rem">84Kg</Text>
           </Stack>
           <Stack>
             <Text>Altura</Text>
-            <Text fontSize="1.5rem">173cm</Text>
+            <Text fontSize="1.5rem">190cm</Text>
           </Stack>
           <Stack>
             <Text>Tipo de Sangue</Text>
@@ -67,8 +67,8 @@ export function MedicalInformations() {
         </Flex>
         <HStack gap={14}>
           <Stack>
-            <Text>Michael Caplan</Text>
-            <Text fontSize="1.5rem"> +1 (650) 555-4703</Text>
+            <Text>Raphael Delanhese</Text>
+            <Text fontSize="1.5rem"> +55 (44) 9 9991-9989</Text>
           </Stack>
         </HStack>
       </Stack>

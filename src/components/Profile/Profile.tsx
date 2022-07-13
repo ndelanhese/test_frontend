@@ -29,6 +29,8 @@ export function Profile() {
             boxSize="7.5rem"
             name="Nathan Delanhese"
             src="https://github.com/ndelanhese.png"
+            _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
+            style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
             Nathan Delanhese
@@ -57,7 +59,18 @@ export function Profile() {
       <Stack mr="auto" ml={["1rem", "5rem"]}>
         <Link href="/">
           <LinkChakra as="a" style={{ textDecoration: "none" }}>
-            <Button bg="transparent" border="1px solid" w="2.5rem" h="2.5rem">
+            <Button
+              bg="transparent"
+              border="1px solid"
+              w="2.5rem"
+              h="2.5rem"
+              _hover={{
+                background: "black",
+                color: "white",
+                transform: "scale(1.2, 1.2)",
+                transition: "0.5s",
+              }}
+            >
               <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
             </Button>
           </LinkChakra>
@@ -69,6 +82,8 @@ export function Profile() {
             boxSize="7.5rem"
             name="Nathan Delanhese"
             src="https://github.com/ndelanhese.png"
+            _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
+            style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
             Nathan Delanhese

@@ -34,7 +34,7 @@ export function ModalShare() {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState(<OverlayOne />);
-    const menuDrawner = useMenuDrawer();
+  
 
     return (
       <>
@@ -46,6 +46,9 @@ export function ModalShare() {
             borderRadius="5px"
             h="2.5rem"
             w="2.5rem"
+            _hover={{background: "white", color: "black", transform: "scale(1.2, 1.2)", transition: "0.5s"}}
+             
+        style={{transition: "0.5s"}}
             onClick={() => {
               setOverlay(<OverlayOne />);
               onOpen();

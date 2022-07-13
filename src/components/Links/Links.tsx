@@ -125,7 +125,8 @@ export function Links() {
         color="white"
         borderRadius="15px"
         bgImg="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-       
+        _hover={{transform: "scale(1.04, 1.08)", transition: "0.5s"}}
+        style={{transition: "0.5s"}}
       >
         <Icon as={FaPlay} w="1.75rem" h="1.75rem"></Icon>
       </Box>
@@ -136,6 +137,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
+        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
+        style={{transition: "0.5s"}}
       >
         <Icon as={FaDownload} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Download</Text>
@@ -147,6 +150,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
+        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
+        style={{transition: "0.5s"}}
       >
         <Icon as={RiExternalLinkFill} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Link Externo</Text>
@@ -158,16 +163,19 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
+        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s",  }}
+        style={{transition: "0.5s"}}
       >
         <Stack align="center" mb="2">
         <Image
           alt="pix image"
-          src="https://cdn.discordapp.com/attachments/480528577729658880/996482866785558659/pix.png"
+          src="https://cdn.discordapp.com/attachments/480528577729658880/996823804439445514/Vector.svg"
           boxSize="100px"
           objectFit="cover"
           w="1.75rem"
           h="1.75rem"
-        />
+          
+          />
         </Stack>
         <Text as="p">Pix</Text>
       </Box>
@@ -178,6 +186,8 @@ export function Links() {
         bg="gray.900"
         color="white"
         borderRadius="10px"
+        _hover={{transform: "scale(1.1, 1.1)", transition: "0.5s", }}
+        style={{transition: "0.5s"}}
       >
         <Icon as={MdEmail} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Email</Text>
