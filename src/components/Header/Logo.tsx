@@ -5,9 +5,9 @@ import {
   useBreakpointValue,
   Link as LinkChakra,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
 export function Logo() {
   const isWideVersion = useBreakpointValue({
     base: true,
@@ -22,21 +22,14 @@ export function Logo() {
             color="white"
             ml={["0.4rem", "2.25rem"]}
             mb={["1rem", "2.2rem"]}
+            mt="2rem"
           >
-            <Text
-              as={"span"}
-              h={["4", "6"]}
-              fontSize={["1rem", "2.2rem"]}
-              _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
-              style={{ transition: "0.5s" }}
-              fontWeight={700}
-            >
-              e
-              <Text as={"span"} color={"green.100"}>
-                /
-              </Text>
-              code
-            </Text>
+            <Image
+              src="/assets/logo.svg"
+              alt="logo ecode"
+              width={100}
+              height={100}
+            />
           </Flex>
         </LinkChakra>
       </Link>
@@ -46,14 +39,13 @@ export function Logo() {
   return (
     <Link href="/">
       <LinkChakra href="/" style={{ textDecoration: "none" }} as="a">
-        <Flex color="white" fontWeight={700}>
-          <Text as={"span"} fontSize="1.7rem">
-            e
-            <Text as={"span"} color={"green.100"}>
-              /
-            </Text>
-            code
-          </Text>
+        <Flex mt='2rem'>
+        <Image
+              src="/assets/logo.svg"
+              alt="logo ecode"
+              width={100}
+              height={100}
+            />
         </Flex>
       </LinkChakra>
     </Link>
