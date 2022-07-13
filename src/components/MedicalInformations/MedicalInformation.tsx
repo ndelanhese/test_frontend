@@ -114,13 +114,13 @@ export function MedicalInformations() {
         </Stack>
       </Stack>
       <Stack pt="2rem">
-        <Link href='tel:44997287173'>
-        <Button as='a' bg="transparent" border="1px solid black" w="90vw">
-          <Text fontSize="1rem" lineHeight="19px" fontWeight={400}>
+        
+        <Button bg="transparent" border="1px solid black" w="90vw">
+         <Link href='tel:44997287173'> <Text as='a' fontSize="1rem" lineHeight="19px" fontWeight={400}>
             Liga agora
-          </Text>
+          </Text>  </Link>
         </Button>
-        </Link>
+      
       </Stack>
     </Stack>
   );
