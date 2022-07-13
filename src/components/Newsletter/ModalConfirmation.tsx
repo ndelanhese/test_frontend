@@ -43,15 +43,18 @@ export function ModalConfirmation() {
            <Icon as={MdArrowForwardIos} />
         </Button>
 
-        <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        <Modal isCentered isOpen={isOpen} onClose={onClose} >
           {overlay}
-          <ModalContent>
+          <ModalContent w={["20.375rem", "46.375rem"]}>
             
-            <ModalCloseButton />
+            
             <ModalBody > 
-              <Text>Inscrição Realizada com sucesso!</Text>
-              <Stack align="center">
-            <Button onClick={onClose} bg="gray.900" color="white" borderRadius="5px" h="3.1875rem" w="9.8125rem"> Fechar</Button>
+              <Stack align="center" gap={7} mt={["36px","51px"]} >
+              <Text fontSize="1.5rem" lineHeight="28px" fontWeight={400} align="center">Inscrição Realizada com sucesso!</Text>
+              
+            <Button onClick={onClose} bg="gray.900" color="white" borderRadius="5px" h={["3.1875rem"]} w={["18.375rem","9.8125rem"]}> 
+              <Text fontSize="1.125rem" lineHeight="21px" fontWeight={400}>Fechar</Text>
+             </Button>
             </Stack>
             </ModalBody>
             <ModalFooter>
