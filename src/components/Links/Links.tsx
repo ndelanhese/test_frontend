@@ -29,14 +29,14 @@ export function Links() {
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(4, 1fr)"
         gap={4}
-        
+        p={4}
         
       >
         
         <GridItem colSpan={4}>
           <Box
             as="button"
-            w="390px"
+            w="93vw"
             h="245px"
             color="white"
             borderRadius="15px"
@@ -52,7 +52,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="184px"
+            w="45vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -65,7 +65,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="184px"
+            w="45vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -79,7 +79,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="184px"
+            w="45vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -99,7 +99,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="184px"
+            w="45vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -129,7 +129,7 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
+        w="45vw"
         h="245px"
         bg="gray.900"
         color="white"
@@ -140,7 +140,7 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
+        w="45vw"
         h="245px"
         bg="gray.900"
         color="white"
@@ -151,7 +151,7 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
+        w="45vw"
         h="245px"
         bg="gray.900"
         color="white"
@@ -169,7 +169,7 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
+        w="45vw"
         h="245px"
         bg="gray.900"
         color="white"

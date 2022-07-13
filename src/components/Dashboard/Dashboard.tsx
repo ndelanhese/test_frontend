@@ -19,6 +19,11 @@ export function Dashboard() {
       <Stack alignItems="center" mt={["3.5rem","5.25rem"]}>
         <Profile />
       </Stack>
+      {isWideVersion && (
+        <Stack alignItems="center" mt="2.5rem" mb="2.5rem">
+          <Newsletter/>
+        </Stack>
+      )}
       <Stack alignItems="center" mt="2.5rem" mb="2.5rem">
         <Links />
       </Stack>

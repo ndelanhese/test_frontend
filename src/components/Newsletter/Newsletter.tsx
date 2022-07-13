@@ -14,11 +14,11 @@ export function Newsletter() {
   
 
   return (
-    <Stack as="form" w="23.375rem" >
+    <Stack as="form" w={["21rem","23.375rem"]} >
       <Text as="label" fontSize="0.875rem">
         Inscrevasse na nossa newsletter
       </Text>
-      <HStack gap="10px">
+      <HStack gap={["1","3"]}>
         <Input placeholder="Endereço de e-mail" />
         <Button bg="gray.900" color="white" onClick={onOpen}>
           <Icon as={MdArrowForwardIos} />
