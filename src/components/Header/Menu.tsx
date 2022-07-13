@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { AiFillMedicineBox, AiOutlineShareAlt } from "react-icons/ai";
+import { ModalShare } from "./ModalShare/ModalShare";
 
 export function Menu() {
   const isWideVersion = useBreakpointValue({
@@ -39,22 +40,7 @@ export function Menu() {
             </Button>
           </LinkChakra>
         </Link>
-        <Button
-          as="button"
-          bg="transparent"
-          border="1px solid white"
-          borderRadius="5px"
-          h="2.5rem"
-          w="2.5rem"
-        >
-          <IconButton
-            aria-label="Icon two"
-            as={AiOutlineShareAlt}
-            bg="transparent"
-            h="1.25rem"
-            w="1.125rem"
-          />
-        </Button>
+        <ModalShare/>
       </HStack>
     );
   }
