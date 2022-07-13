@@ -1,4 +1,5 @@
 import {
+  background,
   Button,
   HStack,
   IconButton,
@@ -43,7 +44,7 @@ export function Menu() {
                 bg="transparent"
                 h="1.25rem"
                 w="1.125rem"
-                _hover={false}
+                _hover={{background: "transparent"}}
               />
             </Button>
           </LinkChakra>
