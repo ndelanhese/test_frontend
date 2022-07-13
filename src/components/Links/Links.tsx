@@ -115,11 +115,11 @@ export function Links() {
   }
 
   return (
-    <Stack direction={["column", "row"]} spacing="0.7rem" w="95%" >
+    <Stack direction={["column", "row"]} spacing="0.7rem" maxWidth="95%">
       <Box
         as="button"
-        w="453px"
-        h="245px"
+        w="28.31rem"
+        h="15.31rem"
         color="white"
         borderRadius="15px"
         bgImg="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -129,8 +129,8 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
-        h="245px"
+        w="11.5rem"
+        h="15.31rem"
         bg="gray.900"
         color="white"
         borderRadius="10px"
@@ -140,8 +140,8 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
-        h="245px"
+        w="11.5rem"
+        h="15.31rem"
         bg="gray.900"
         color="white"
         borderRadius="10px"
@@ -151,8 +151,8 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
-        h="245px"
+        w="11.5rem"
+        h="15.31rem"
         bg="gray.900"
         color="white"
         borderRadius="10px"
@@ -169,8 +169,8 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="184px"
-        h="245px"
+        w="11.5rem"
+        h="15.31rem"
         bg="gray.900"
         color="white"
         borderRadius="10px"
