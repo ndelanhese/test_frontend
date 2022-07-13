@@ -8,18 +8,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import {
-  format,
-  formatDistanceToNow,
-  formatDistanceToNowStrict,
-} from "date-fns";
+import { format, formatDistanceToNowStrict } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 import { MdArrowBackIos } from "react-icons/md";
 import Link from "next/link";
+import { api } from "../../services/api";
+import { useEffect, useState } from 'react';
+
 
 export function Profile() {
   const { asPath } = useRouter();
+const [profile, setProfile] = useState<any>()
+
+  useEffect(() => {
+    api.get("/profile").then((response) => {setProfile(response.data)}).catch((err) => {console.log(err)});
+  }, []);
 
   if (asPath === "/") {
     return (
@@ -33,11 +37,10 @@ export function Profile() {
             style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
-            Nathan Delanhese
+            {profile.name}
           </Text>
           <Text align="center" p={3} pb={6}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
-            ullamcorper facilisis leo, aenean.
+          {profile.bio}
           </Text>
           <SocialNetworks />
         </Stack>
@@ -103,3 +106,4 @@ export function Profile() {
     </>
   );
 }
+
