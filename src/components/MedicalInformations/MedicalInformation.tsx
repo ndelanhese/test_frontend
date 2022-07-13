@@ -115,7 +115,7 @@ export function MedicalInformations() {
         </Stack>
       </Stack>
       <Stack pt="2rem">
-        <Button bg="transparent" border="1px solid black" w="90vw">
+        <Button bg="transparent" border="1px solid black" w="90vw" style={{ textDecoration: "none" }}>
           
          <LinkChakra as='a' href="tel:44997287173">
             <Text as="a" fontSize="1rem" lineHeight="19px" fontWeight={400}>

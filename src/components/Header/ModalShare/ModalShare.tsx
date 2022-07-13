@@ -38,9 +38,9 @@ export function ModalShare() {
     function share(){
       if (navigator.share !== undefined) {
         navigator.share({
-          title: 'O título da sua página',
-          text: 'Um texto de resumo',
-          url: 'https://seusite.com/sua_url',
+          title: 'E code',
+          text: 'E code profile share',
+          url: 'http://localhost:3000/',
         })
         .then(() => console.log('Successful share'))
         .catch((error) => console.log('Error sharing', error));
@@ -83,7 +83,7 @@ export function ModalShare() {
               mr="0.7rem"
               ml="0.8rem"
             />
-            <Text> Compartilhar</Text>
+            <Text style={{ textDecoration: "none" }}> Compartilhar</Text>
           </Button>
         )}
 
