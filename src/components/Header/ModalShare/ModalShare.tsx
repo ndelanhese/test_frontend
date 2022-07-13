@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 
 import { AiOutlineShareAlt } from "react-icons/ai";
+import { useMenuDrawer } from "../../../contexts/MenuDrawerContext";
 
 export function ModalShare() {
   const isWideVersion = useBreakpointValue({
@@ -33,6 +34,7 @@ export function ModalShare() {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState(<OverlayOne />);
+    const menuDrawner = useMenuDrawer();
 
     return (
       <>
@@ -59,6 +61,7 @@ export function ModalShare() {
             w="1rem"
             onClick={() => {
               setOverlay(<OverlayOne />);
+              menuDrawner.onClose();
               onOpen();
             }}
           >
