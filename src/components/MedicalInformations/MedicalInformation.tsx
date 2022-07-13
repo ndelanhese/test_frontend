@@ -4,6 +4,7 @@ import {
   Divider,
   Flex,
   HStack,
+  Link as LinkChakra,
   Stack,
   Text,
   useBreakpointValue,
@@ -115,12 +116,13 @@ export function MedicalInformations() {
       </Stack>
       <Stack pt="2rem">
         <Button bg="transparent" border="1px solid black" w="90vw">
-          <Link href="tel:44997287173">
-         
+          
+         <LinkChakra as='a' href="tel:44997287173">
             <Text as="a" fontSize="1rem" lineHeight="19px" fontWeight={400}>
               Liga agora
             </Text>
-          </Link>
+            </LinkChakra>
+          
         </Button>
       </Stack>
     </Stack>
