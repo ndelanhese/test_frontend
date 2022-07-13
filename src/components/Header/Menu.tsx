@@ -54,6 +54,8 @@ export function Menu() {
     );
   }
 
+ 
+
   return (
     <Stack p="0.875rem 2.75rem" gap="1rem">
       <Link href="/medicalProfile">

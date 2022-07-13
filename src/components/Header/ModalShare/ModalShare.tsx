@@ -35,6 +35,17 @@ export function ModalShare() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState(<OverlayOne />);
   
+    function share(){
+      if (navigator.share !== undefined) {
+        navigator.share({
+          title: 'O título da sua página',
+          text: 'Um texto de resumo',
+          url: 'https://seusite.com/sua_url',
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+      }
+    }
 
     return (
       <>
@@ -62,10 +73,7 @@ export function ModalShare() {
             bg="transparent"
             h="1rem"
             w="1rem"
-            onClick={() => {
-              setOverlay(<OverlayOne />);
-              onOpen();
-            }}
+            onClick={share}
           >
             <Icon
               as={AiOutlineShareAlt}
