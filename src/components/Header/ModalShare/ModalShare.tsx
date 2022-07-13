@@ -61,12 +61,17 @@ export function ModalShare() {
             w="1rem"
             onClick={() => {
               setOverlay(<OverlayOne />);
-              menuDrawner.onClose();
               onOpen();
             }}
           >
-            <Icon as={AiOutlineShareAlt} h="1.125rem" w="1.125rem" mr="0.7rem" ml="0.8rem"/>
-           <Text> Compartilhar</Text>
+            <Icon
+              as={AiOutlineShareAlt}
+              h="1.125rem"
+              w="1.125rem"
+              mr="0.7rem"
+              ml="0.8rem"
+            />
+            <Text> Compartilhar</Text>
           </Button>
         )}
 
