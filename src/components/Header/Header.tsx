@@ -1,17 +1,16 @@
 import React from "react";
 import {
-  Box,
   Flex,
   Icon,
   IconButton,
-  Link,
-  Text,
+  Link as LinkChakra,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { useMenuDrawer } from "../../contexts/MenuDrawerContext";
 import { AiOutlineMenu } from "react-icons/ai";
+import Link from "next/link";
 
 export function Header() {
   const { onOpen } = useMenuDrawer();
@@ -19,7 +18,6 @@ export function Header() {
     base: false,
     lg: true,
   });
-
 
   return (
     <Flex
@@ -45,8 +43,10 @@ export function Header() {
 
       {isWideVersion && (
         <>
-          <Link href="/" style={{ textDecoration: 'none' }}>
-          <Logo />
+          <Link href="/">
+            <LinkChakra href="/" style={{ textDecoration: "none" }} as="a">
+              <Logo />
+            </LinkChakra>
           </Link>
           <Flex ml="auto" alignItems="center">
             <Menu />

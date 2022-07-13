@@ -3,7 +3,7 @@ import {
   Button,
   Flex,
   Icon,
-  Link,
+  Link as LinkChakra,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -16,6 +16,7 @@ import {
 import ptBR from "date-fns/locale/pt-BR";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 import { MdArrowBackIos } from "react-icons/md";
+import Link from "next/link";
 
 export function Profile() {
   const { asPath } = useRouter();
@@ -54,10 +55,12 @@ export function Profile() {
   return (
     <>
       <Stack mr="auto" ml={["1rem", "5rem"]}>
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <Button bg="transparent" border="1px solid" w="2.5rem" h="2.5rem">
-            <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
-          </Button>
+        <Link href="/">
+          <LinkChakra as="a" style={{ textDecoration: "none" }}>
+            <Button bg="transparent" border="1px solid" w="2.5rem" h="2.5rem">
+              <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
+            </Button>
+          </LinkChakra>
         </Link>
       </Stack>
       <Flex>
