@@ -74,6 +74,7 @@ export function ModalShare() {
             h="1rem"
             w="1rem"
             onClick={share}
+            style={{textDecoration: 'none'}}
           >
             <Icon
               as={AiOutlineShareAlt}
