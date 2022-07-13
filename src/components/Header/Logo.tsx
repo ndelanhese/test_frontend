@@ -1,6 +1,6 @@
 import {
   Flex,
-  Stack,
+
   Text,
   useBreakpointValue,
   Link as LinkChakra,
@@ -39,13 +39,14 @@ export function Logo() {
   return (
     <Link href="/">
       <LinkChakra href="/" style={{ textDecoration: "none" }} as="a">
-        <Flex mt='2rem'>
-        <Image
-              src="/assets/logo.svg"
-              alt="logo ecode"
-              width={100}
-              height={100}
-            />
+        <Flex color="white" fontWeight={700}>
+          <Text as={"span"} fontSize="1.7rem">
+            e
+            <Text as={"span"} color={"green.100"}>
+              /
+            </Text>
+            code
+          </Text>
         </Flex>
       </LinkChakra>
     </Link>
