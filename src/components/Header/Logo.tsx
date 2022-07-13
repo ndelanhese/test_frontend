@@ -29,6 +29,7 @@ export function Logo() {
               fontSize={["1rem", "2.2rem"]}
               _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
               style={{ transition: "0.5s" }}
+              fontWeight={700}
             >
               e
               <Text as={"span"} color={"green.100"}>
@@ -45,7 +46,7 @@ export function Logo() {
   return (
     <Link href="/">
       <LinkChakra href="/" style={{ textDecoration: "none" }} as="a">
-        <Flex color="white">
+        <Flex color="white" fontWeight={700}>
           <Text as={"span"} fontSize="1.7rem">
             e
             <Text as={"span"} color={"green.100"}>
