@@ -36,7 +36,7 @@ export function Links() {
         <GridItem colSpan={4}>
           <Box
             as="button"
-            w="93vw"
+            w="90vw"
             h="245px"
             color="white"
             borderRadius="15px"
@@ -52,7 +52,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="45vw"
+            w="43vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -65,7 +65,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="45vw"
+            w="43vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -79,7 +79,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="45vw"
+            w="43vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -99,7 +99,7 @@ export function Links() {
         <GridItem colSpan={2}>
           <Box
             as="button"
-            w="45vw"
+            w="43vw"
             h="245px"
             bg="gray.900"
             color="white"
@@ -115,7 +115,7 @@ export function Links() {
   }
 
   return (
-    <Stack direction={["column", "row"]} spacing="0.7rem" p={3} >
+    <Stack direction={["column", "row"]} spacing="0.7rem" w="95%" >
       <Box
         as="button"
         w="453px"
@@ -123,39 +123,39 @@ export function Links() {
         color="white"
         borderRadius="15px"
         bgImg="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-        bgColor="rgba(0,0,0,0.7)"
+       
       >
         <Icon as={FaPlay} w="1.75rem" h="1.75rem"></Icon>
       </Box>
       <Box
         as="button"
-        w="45vw"
+        w="184px"
         h="245px"
         bg="gray.900"
         color="white"
-        borderRadius="15px"
+        borderRadius="10px"
       >
         <Icon as={FaDownload} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Download</Text>
       </Box>
       <Box
         as="button"
-        w="45vw"
+        w="184px"
         h="245px"
         bg="gray.900"
         color="white"
-        borderRadius="15px"
+        borderRadius="10px"
       >
         <Icon as={RiExternalLinkFill} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Link Externo</Text>
       </Box>
       <Box
         as="button"
-        w="45vw"
+        w="184px"
         h="245px"
         bg="gray.900"
         color="white"
-        borderRadius="15px"
+        borderRadius="10px"
       >
         <Image
           alt="pix image"
@@ -169,11 +169,11 @@ export function Links() {
       </Box>
       <Box
         as="button"
-        w="45vw"
+        w="184px"
         h="245px"
         bg="gray.900"
         color="white"
-        borderRadius="15px"
+        borderRadius="10px"
       >
         <Icon as={MdEmail} w="1.75rem" h="1.75rem"></Icon>
         <Text as="p">Email</Text>
