@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Flex,
   HStack,
@@ -30,23 +31,23 @@ export function MedicalInformations() {
           </Text>
         </Flex>
         <HStack gap={14}>
-          <Stack gap={1}>
+          <Stack>
             <Text>Peso</Text>
             <Text fontSize="1.5rem">68Kg</Text>
           </Stack>
-          <Stack gap={1}>
+          <Stack>
             <Text>Altura</Text>
             <Text fontSize="1.5rem">173cm</Text>
           </Stack>
-          <Stack gap={1}>
+          <Stack>
             <Text>Tipo de Sangue</Text>
             <Text fontSize="1.5rem"> O+</Text>
           </Stack>
-          <Stack gap={1}>
+          <Stack>
             <Text>Doenças</Text>
             <Text fontSize="1.5rem">Nenhuma</Text>
           </Stack>
-          <Stack gap={1}>
+          <Stack>
             <Text>Alergias</Text>
             <Text fontSize="1.5rem">Nenhuma</Text>
           </Stack>
@@ -65,7 +66,7 @@ export function MedicalInformations() {
           </Text>
         </Flex>
         <HStack gap={14}>
-          <Stack gap={1}>
+          <Stack>
             <Text>Michael Caplan</Text>
             <Text fontSize="1.5rem"> +1 (650) 555-4703</Text>
           </Stack>
@@ -75,41 +76,48 @@ export function MedicalInformations() {
   }
 
   return (
-    <Stack ml="1rem">
+    <Stack ml="1rem" gap={5}>
       <Divider w="95vw" mt="3rem" mb="1.5rem" />
 
       <Stack gap={5}>
-        <Stack gap={1}>
+        <Stack>
           <Text>Peso</Text>
           <Text fontSize="1.5rem">68Kg</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack gap={1}>
+        <Stack>
           <Text>Altura</Text>
           <Text fontSize="1.5rem">173cm</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack gap={1}>
+        <Stack>
           <Text>Tipo de Sangue</Text>
           <Text fontSize="1.5rem"> O+</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack gap={1}>
+        <Stack>
           <Text>Doenças</Text>
           <Text fontSize="1.5rem">Nenhuma</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack gap={1}>
+        <Stack>
           <Text>Alergias</Text>
           <Text fontSize="1.5rem">Nenhuma</Text>
         </Stack>
 
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
 
-        <Stack gap={1}>
+        <Stack>
           <Text>Michael Caplan</Text>
           <Text fontSize="1.5rem"> +1 (650) 555-4703</Text>
         </Stack>
+      </Stack>
+      <Stack pt="2rem">
+        <Button bg="transparent" border="1px solid black" w="90vw">
+          <Text fontSize="1rem" lineHeight="19px" fontWeight={400}>
+            Liga agora
+          </Text>
+        </Button>
       </Stack>
     </Stack>
   );
