@@ -65,7 +65,8 @@ export function ModalShare() {
               onOpen();
             }}
           >
-            <Icon as={AiOutlineShareAlt} h="1.125rem" w="1.125rem" />
+            <Icon as={AiOutlineShareAlt} h="1.125rem" w="1.125rem" mr="0.7rem" ml="0.8rem"/>
+           <Text> Compartilhar</Text>
           </Button>
         )}
 

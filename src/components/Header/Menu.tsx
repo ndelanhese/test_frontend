@@ -55,22 +55,13 @@ export function Menu() {
               as={AiFillMedicineBox}
               bg="transparent"
               h="1.125rem"
-              w="1.125rem"
+              w="1.125rem" 
             />
             Perfil Médico
           </Button>
         </LinkChakra>
       </Link>
-      <Button bg="transparent" h="1rem" w="1rem">
-        <IconButton
-          aria-label="Icon two"
-          as={AiOutlineShareAlt}
-          bg="transparent"
-          h="1.125rem"
-          w="1.125rem"
-        />
-        Compartilhar
-      </Button>
+      <ModalShare/>
     </Stack>
   );
 }
