@@ -8,6 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export function MedicalInformations() {
   const isWideVersion = useBreakpointValue({
@@ -82,12 +83,12 @@ export function MedicalInformations() {
       <Stack gap={5}>
         <Stack>
           <Text>Peso</Text>
-          <Text fontSize="1.5rem">68Kg</Text>
+          <Text fontSize="1.5rem">84Kg</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
           <Text>Altura</Text>
-          <Text fontSize="1.5rem">173cm</Text>
+          <Text fontSize="1.5rem">190cm</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
@@ -108,16 +109,18 @@ export function MedicalInformations() {
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
 
         <Stack>
-          <Text>Michael Caplan</Text>
-          <Text fontSize="1.5rem"> +1 (650) 555-4703</Text>
+          <Text>Raphael Delanhese</Text>
+          <Text fontSize="1.5rem"> +55 (44) 9 9998-9987</Text>
         </Stack>
       </Stack>
       <Stack pt="2rem">
-        <Button bg="transparent" border="1px solid black" w="90vw">
+        <Link href='tel:44997287173'>
+        <Button as='a' bg="transparent" border="1px solid black" w="90vw">
           <Text fontSize="1rem" lineHeight="19px" fontWeight={400}>
             Liga agora
           </Text>
         </Button>
+        </Link>
       </Stack>
     </Stack>
   );
