@@ -33,7 +33,6 @@ export function Header() {
           aria-label="Open Navigation"
           icon={<Icon as={AiOutlineMenu} />}
           fontSize={32}
-       
           variant="unstyled"
           ml="auto"
           onClick={onOpen}
@@ -44,11 +43,8 @@ export function Header() {
 
       {isWideVersion && (
         <>
-          <Link href="/">
-            <LinkChakra href="/" style={{ textDecoration: "none" }} as="a">
-              <Logo />
-            </LinkChakra>
-          </Link>
+          <Logo />
+
           <Flex ml="auto" alignItems="center">
             <Menu />
           </Flex>

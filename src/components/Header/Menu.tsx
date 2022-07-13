@@ -62,7 +62,7 @@ export function Menu() {
   return (
     <Stack p="0.875rem 2.75rem" gap="1rem">
       <Link href="/medicalProfile" >
-        <LinkChakra as="a">
+        <LinkChakra as="a" style={{ textDecoration: "none" }}>
           <Button as="button" bg="transparent" h="1rem" w="1rem">
             <IconButton
               aria-label="Icon one"
