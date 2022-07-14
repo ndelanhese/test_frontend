@@ -19,7 +19,7 @@ export function Newsletter() {
         Inscrevasse na nossa newsletter
       </Text>
       <HStack gap={["1", "3"]}>
-        <Input placeholder="Endereço de e-mail" value={input} onChange={handleOnChange}/>
+        <Input placeholder="Endereço de e-mail" type="email" value={input} onChange={handleOnChange}/>
 
         <ModalConfirmation text={input} />
       </HStack>
