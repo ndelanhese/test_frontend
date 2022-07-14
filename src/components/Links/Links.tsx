@@ -1,14 +1,11 @@
 import {
   Box,
-  Button,
   Flex,
   Grid,
   GridItem,
-  HStack,
   Icon,
   Image,
   Stack,
-  Spinner,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";

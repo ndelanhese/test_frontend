@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import {
   Button,
-  Flex,
   Icon,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
-  ModalHeader,
   ModalOverlay,
   Stack,
   Text,
@@ -17,12 +14,11 @@ import {
 import { MdArrowForwardIos } from "react-icons/md";
 import { api } from "../../services/api";
 
-interface TextProps{
-  text: string
+interface TextProps {
+  text: string;
 }
 
-
-export function ModalConfirmation({text}: TextProps) {
+export function ModalConfirmation({ text }: TextProps) {
   function BackdropExample() {
     const OverlayOne = () => (
       <ModalOverlay
@@ -34,33 +30,27 @@ export function ModalConfirmation({text}: TextProps) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState(<OverlayOne />);
 
-    let [resultado, setResultado] = useState("")
+    let [resultado, setResultado] = useState("");
 
-   function responseOk(){
-    setResultado("Inscrição realizada com sucesso!") 
-    setOverlay(<OverlayOne />);
-    onOpen();
-    
-   }
+    function responseOk() {
+      setResultado("Inscrição realizada com sucesso!");
+      setOverlay(<OverlayOne />);
+      onOpen();
+    }
 
-   async function handleNewsletterSubmit(){
-
-      try{
+    async function handleNewsletterSubmit() {
+      try {
         const response = await api.post("/newsletter", {
-          email: text
-        })
-  if(response.status == 204){
-        responseOk()
-      }
-      }catch(err){
-        setResultado("Não foi possível realizar a inscrição!")
+          email: text,
+        });
+        if (response.status == 204) {
+          responseOk();
+        }
+      } catch (err) {
+        setResultado("Não foi possível realizar a inscrição!");
         setOverlay(<OverlayOne />);
         onOpen();
       }
-      
-      
-
-     
     }
 
     return (
@@ -72,11 +62,11 @@ export function ModalConfirmation({text}: TextProps) {
             background: "white",
             color: "black",
             border: "1px solid black",
-            transform: "scale(1.2, 1.2)", transition: "0.5s"
-        
+            transform: "scale(1.2, 1.2)",
+            transition: "0.5s",
           }}
           onClick={() => {
-           handleNewsletterSubmit()
+            handleNewsletterSubmit();
           }}
         >
           <Icon as={MdArrowForwardIos} />

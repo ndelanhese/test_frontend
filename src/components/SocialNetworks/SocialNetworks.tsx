@@ -1,5 +1,4 @@
 import { Button, Flex, HStack, Icon, Link, Spinner } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import {
   AiFillYoutube,
   AiOutlineInstagram,

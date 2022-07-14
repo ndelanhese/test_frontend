@@ -1,6 +1,5 @@
 import {
   Flex,
-
   Text,
   useBreakpointValue,
   Link as LinkChakra,

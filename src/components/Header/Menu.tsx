@@ -1,5 +1,4 @@
 import {
-  background,
   Button,
   HStack,
   IconButton,

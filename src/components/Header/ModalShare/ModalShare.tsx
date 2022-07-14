@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Button,
-  Flex,
   Icon,
   Modal,
   ModalBody,
@@ -13,8 +12,7 @@ import {
   Text,
   useDisclosure,
   useBreakpointValue,
-  Spinner,
-} from "@chakra-ui/react";
+ } from "@chakra-ui/react";
 
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { useQuery } from 'react-query';

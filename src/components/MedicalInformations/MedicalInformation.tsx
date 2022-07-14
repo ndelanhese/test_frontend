@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import { api } from "../../services/api";
 import {
-  Box,
   Button,
   Divider,
   Flex,

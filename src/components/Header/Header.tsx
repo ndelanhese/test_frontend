@@ -3,14 +3,13 @@ import {
   Flex,
   Icon,
   IconButton,
-  Link as LinkChakra,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { useMenuDrawer } from "../../contexts/MenuDrawerContext";
 import { AiOutlineMenu } from "react-icons/ai";
-import Link from "next/link";
+
 
 export function Header() {
   const { onOpen } = useMenuDrawer();
