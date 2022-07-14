@@ -37,7 +37,7 @@ export function Links() {
     <>
       {isLoading ? (
         <Flex justify="center">
-          <Spinner />
+         
         </Flex>
       ) : isWideVersion ? (
         <Grid h="703.36px" templateColumns="repeat(8, 1fr)" gap={4} p={4}>

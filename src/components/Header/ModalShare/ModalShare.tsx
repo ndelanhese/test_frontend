@@ -109,7 +109,7 @@ export function ModalShare() {
 
        
           { isLoading ? (
-            <Flex><Spinner/></Flex>
+            <></>
           ) : (
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
             {overlay}
