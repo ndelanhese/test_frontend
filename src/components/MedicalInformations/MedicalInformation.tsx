@@ -7,6 +7,7 @@ import {
   Flex,
   HStack,
   Link as LinkChakra,
+  Spinner,
   Stack,
   Text,
   useBreakpointValue,
@@ -20,8 +21,6 @@ export function MedicalInformations() {
 
     return data;
   });
-
-
 
   const isWideVersion = useBreakpointValue({
     base: true,
@@ -44,44 +43,50 @@ export function MedicalInformations() {
           </Text>
         </Flex>
         <HStack gap={14}>
-          <Stack>
-            <Text>Peso</Text>
-            <Text fontSize="1.5rem">{data.weight}</Text>
-          </Stack>
-          <Stack>
-            <Text>Altura</Text>
-            <Text fontSize="1.5rem">{data.height}</Text>
-          </Stack>
-          <Stack>
-            <Text>Tipo de Sangue</Text>
-            <Text fontSize="1.5rem"> {data.blood_type}</Text>
-          </Stack>
-          <Stack>
-            <Text>Doenças</Text>
-            <Text fontSize="1.5rem">{
-            data.diseases.map((doenca, indice) => {
-              
-                if(indice === (data.diseases.length - 1)){
-                  return (doenca)
-                }else{
-                  return (doenca + ", ")
-                }
-              
-            })}</Text>
-          </Stack>
-          <Stack>
-            <Text>Alergias</Text>
-            <Text fontSize="1.5rem">{
-            data.allergies.map((alergia, indice) => {
-              
-                if(indice === (data.allergies.length - 1)){
-                  return (alergia)
-                }else{
-                  return (alergia + ", ")
-                }
-              
-            })}</Text>
-          </Stack>
+          {isLoading ? (
+            <Flex>
+              <Spinner />
+            </Flex>
+          ) : (
+            <>
+              <Stack>
+                <Text>Peso</Text>
+                <Text fontSize="1.5rem">{data.weight}</Text>
+              </Stack>
+              <Stack>
+                <Text>Altura</Text>
+                <Text fontSize="1.5rem">{data.height}</Text>
+              </Stack>
+              <Stack>
+                <Text>Tipo de Sangue</Text>
+                <Text fontSize="1.5rem"> {data.blood_type}</Text>
+              </Stack>
+              <Stack>
+                <Text>Doenças</Text>
+                <Text fontSize="1.5rem">
+                  {data.diseases.map((doenca, indice) => {
+                    if (indice === data.diseases.length - 1) {
+                      return doenca;
+                    } else {
+                      return doenca + ", ";
+                    }
+                  })}
+                </Text>
+              </Stack>
+              <Stack>
+                <Text>Alergias</Text>
+                <Text fontSize="1.5rem">
+                  {data.allergies.map((alergia, indice) => {
+                    if (indice === data.allergies.length - 1) {
+                      return alergia;
+                    } else {
+                      return alergia + ", ";
+                    }
+                  })}
+                </Text>
+              </Stack>
+            </>
+          )}
         </HStack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
 
@@ -98,8 +103,16 @@ export function MedicalInformations() {
         </Flex>
         <HStack gap={14}>
           <Stack>
-            <Text>{data.emergency_contact.name}</Text>
-            <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
+            {isLoading ? (
+              <Flex>
+                <Spinner />
+              </Flex>
+            ) : (
+              <>
+                <Text>{data.emergency_contact.name}</Text>
+                <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
+              </>
+            )}
           </Stack>
         </HStack>
       </Stack>
@@ -111,55 +124,69 @@ export function MedicalInformations() {
       <Divider w="95vw" mt="3rem" mb="1.5rem" />
 
       <Stack gap={5}>
-        <Stack>
-          <Text>Peso</Text>
-          <Text fontSize="1.5rem">{data.weight}</Text>
-        </Stack>
-        <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack>
-          <Text>Altura</Text>
-          <Text fontSize="1.5rem">{data.height}</Text>
-        </Stack>
-        <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack>
-          <Text>Tipo de Sangue</Text>
-          <Text fontSize="1.5rem"> {data.blood_type}</Text>
-        </Stack>
-        <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack>
-          <Text>Doenças</Text>
-          <Text fontSize="1.5rem">{
-            data.diseases.map((doenca, indice) => {
-              
-                if(indice === (data.diseases.length - 1)){
-                  return (doenca)
-                }else{
-                  return (doenca + ", ")
-                }
-              
-            })}</Text>
-        </Stack>
-        <Divider w="85vw" mt="3rem" mb="1.5rem" />
-        <Stack>
-          <Text>Alergias</Text>
-          <Text fontSize="1.5rem">{
-            data.allergies.map((alergia, indice) => {
-              
-                if(indice === (data.allergies.length - 1)){
-                  return (alergia)
-                }else{
-                  return (alergia + ", ")
-                }
-              
-            })}</Text>
-        </Stack>
+        {isLoading ? (
+          <Flex>
+            <Spinner />
+          </Flex>
+        ) : (
+          <>
+            <Stack>
+              <Text>Peso</Text>
+              <Text fontSize="1.5rem">{data.weight}</Text>
+            </Stack>
+            <Divider w="85vw" mt="3rem" mb="1.5rem" />
+            <Stack>
+              <Text>Altura</Text>
+              <Text fontSize="1.5rem">{data.height}</Text>
+            </Stack>
+            <Divider w="85vw" mt="3rem" mb="1.5rem" />
+            <Stack>
+              <Text>Tipo de Sangue</Text>
+              <Text fontSize="1.5rem"> {data.blood_type}</Text>
+            </Stack>
+            <Divider w="85vw" mt="3rem" mb="1.5rem" />
+            <Stack>
+              <Text>Doenças</Text>
+              <Text fontSize="1.5rem">
+                {data.diseases.map((doenca, indice) => {
+                  if (indice === data.diseases.length - 1) {
+                    return doenca;
+                  } else {
+                    return doenca + ", ";
+                  }
+                })}
+              </Text>
+            </Stack>
+            <Divider w="85vw" mt="3rem" mb="1.5rem" />
+            <Stack>
+              <Text>Alergias</Text>
+              <Text fontSize="1.5rem">
+                {data.allergies.map((alergia, indice) => {
+                  if (indice === data.allergies.length - 1) {
+                    return alergia;
+                  } else {
+                    return alergia + ", ";
+                  }
+                })}
+              </Text>
+            </Stack>
 
-        <Divider w="85vw" mt="3rem" mb="1.5rem" />
+            <Divider w="85vw" mt="3rem" mb="1.5rem" />
 
-        <Stack>
-          <Text>{data.emergency_contact.name}</Text>
-          <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
-        </Stack>
+            {isLoading ? (
+              <Flex>
+                <Spinner />
+              </Flex>
+            ) : (
+              <>
+                <Stack>
+                  <Text>{data.emergency_contact.name}</Text>
+                  <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
+                </Stack>
+              </>
+            )}
+          </>
+        )}
       </Stack>
       <Stack pt="2rem">
         <Button
@@ -168,11 +195,19 @@ export function MedicalInformations() {
           w="90vw"
           style={{ textDecoration: "none" }}
         >
-          <LinkChakra as="a" href={`tel:${data.emergency_contact.phone}`}>
-            <Text as="a" fontSize="1rem" lineHeight="19px" fontWeight={400}>
-              Liga agora
-            </Text>
-          </LinkChakra>
+          {isLoading ? (
+            <Flex>
+              <Spinner />
+            </Flex>
+          ) : (
+            <>
+              <LinkChakra as="a" href={`tel:${data.emergency_contact.phone}`}>
+                <Text as="a" fontSize="1rem" lineHeight="19px" fontWeight={400}>
+                  Liga agora
+                </Text>
+              </LinkChakra>
+            </>
+          )}
         </Button>
       </Stack>
     </Stack>

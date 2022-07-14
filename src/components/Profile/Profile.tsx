@@ -39,8 +39,22 @@ export function Profile() {
     });
 
 
+    let publishedAt 
 
-  
+  let publishedDateFormated
+  let publishedDateRelativeToNow 
+
+  if(!isLoading){
+    publishedAt = new Date(Date.parse (dataNascimento.data.birthdate));
+
+    publishedDateFormated = publishedDateFormated = format(publishedAt, "d 'de' LLLL',' Y", {
+      locale: ptBR,
+    });
+
+    publishedDateRelativeToNow = formatDistanceToNowStrict(publishedAt, {
+      locale: ptBR,
+    });
+  }
   if (asPath === "/") {
     return (
       <Flex align="center">
@@ -70,14 +84,7 @@ export function Profile() {
     );
   }
 
-  const publishedAt = new Date(Date.parse (dataNascimento.data.birthdate));
-
-  const publishedDateFormated = format(publishedAt, "d 'de' LLLL',' Y", {
-    locale: ptBR,
-  });
-  const publishedDateRelativeToNow = formatDistanceToNowStrict(publishedAt, {
-    locale: ptBR,
-  });
+  
 
   return (
     <>
