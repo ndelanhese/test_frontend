@@ -44,17 +44,21 @@ export function Profile() {
   let publishedDateFormated
   let publishedDateRelativeToNow 
 
-  if(!isLoading){
-    publishedAt = new Date(Date.parse (dataNascimento.data.birthdate));
+  { !dataNascimento.isLoading &&
+    (
+      
+      publishedAt = new Date(Date.parse (dataNascimento.data.birthdate)),
 
     publishedDateFormated = publishedDateFormated = format(publishedAt, "d 'de' LLLL',' Y", {
       locale: ptBR,
-    });
+    }),
 
     publishedDateRelativeToNow = formatDistanceToNowStrict(publishedAt, {
       locale: ptBR,
-    });
+    }))
   }
+
+
   if (asPath === "/") {
     return (
       <Flex align="center">
