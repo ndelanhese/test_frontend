@@ -1,3 +1,5 @@
+import { useQuery } from "react-query";
+import { api } from "../../services/api";
 import {
   Box,
   Button,
@@ -9,9 +11,18 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import Link from "next/link";
 
 export function MedicalInformations() {
+  const { data, isLoading } = useQuery("MedicalInformations", async () => {
+    const response = await api.get("/medical-profile");
+
+    const data = await response.data;
+
+    return data;
+  });
+
+
+
   const isWideVersion = useBreakpointValue({
     base: true,
     lg: false,
@@ -35,23 +46,41 @@ export function MedicalInformations() {
         <HStack gap={14}>
           <Stack>
             <Text>Peso</Text>
-            <Text fontSize="1.5rem">84Kg</Text>
+            <Text fontSize="1.5rem">{data.weight}</Text>
           </Stack>
           <Stack>
             <Text>Altura</Text>
-            <Text fontSize="1.5rem">190cm</Text>
+            <Text fontSize="1.5rem">{data.height}</Text>
           </Stack>
           <Stack>
             <Text>Tipo de Sangue</Text>
-            <Text fontSize="1.5rem"> O+</Text>
+            <Text fontSize="1.5rem"> {data.blood_type}</Text>
           </Stack>
           <Stack>
             <Text>Doenças</Text>
-            <Text fontSize="1.5rem">Nenhuma</Text>
+            <Text fontSize="1.5rem">{
+            data.diseases.map((doenca, indice) => {
+              
+                if(indice === (data.diseases.length - 1)){
+                  return (doenca)
+                }else{
+                  return (doenca + ", ")
+                }
+              
+            })}</Text>
           </Stack>
           <Stack>
             <Text>Alergias</Text>
-            <Text fontSize="1.5rem">Nenhuma</Text>
+            <Text fontSize="1.5rem">{
+            data.allergies.map((alergia, indice) => {
+              
+                if(indice === (data.allergies.length - 1)){
+                  return (alergia)
+                }else{
+                  return (alergia + ", ")
+                }
+              
+            })}</Text>
           </Stack>
         </HStack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
@@ -69,8 +98,8 @@ export function MedicalInformations() {
         </Flex>
         <HStack gap={14}>
           <Stack>
-            <Text>Raphael Delanhese</Text>
-            <Text fontSize="1.5rem"> +55 (44) 9 9991-9989</Text>
+            <Text>{data.emergency_contact.name}</Text>
+            <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
           </Stack>
         </HStack>
       </Stack>
@@ -84,45 +113,66 @@ export function MedicalInformations() {
       <Stack gap={5}>
         <Stack>
           <Text>Peso</Text>
-          <Text fontSize="1.5rem">84Kg</Text>
+          <Text fontSize="1.5rem">{data.weight}</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
           <Text>Altura</Text>
-          <Text fontSize="1.5rem">190cm</Text>
+          <Text fontSize="1.5rem">{data.height}</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
           <Text>Tipo de Sangue</Text>
-          <Text fontSize="1.5rem"> O+</Text>
+          <Text fontSize="1.5rem"> {data.blood_type}</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
           <Text>Doenças</Text>
-          <Text fontSize="1.5rem">Nenhuma</Text>
+          <Text fontSize="1.5rem">{
+            data.diseases.map((doenca, indice) => {
+              
+                if(indice === (data.diseases.length - 1)){
+                  return (doenca)
+                }else{
+                  return (doenca + ", ")
+                }
+              
+            })}</Text>
         </Stack>
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
         <Stack>
           <Text>Alergias</Text>
-          <Text fontSize="1.5rem">Nenhuma</Text>
+          <Text fontSize="1.5rem">{
+            data.allergies.map((alergia, indice) => {
+              
+                if(indice === (data.allergies.length - 1)){
+                  return (alergia)
+                }else{
+                  return (alergia + ", ")
+                }
+              
+            })}</Text>
         </Stack>
 
         <Divider w="85vw" mt="3rem" mb="1.5rem" />
 
         <Stack>
-          <Text>Raphael Delanhese</Text>
-          <Text fontSize="1.5rem"> +55 (44) 9 9998-9987</Text>
+          <Text>{data.emergency_contact.name}</Text>
+          <Text fontSize="1.5rem"> {data.emergency_contact.phone}</Text>
         </Stack>
       </Stack>
       <Stack pt="2rem">
-        <Button bg="transparent" border="1px solid black" w="90vw" style={{ textDecoration: "none" }}>
-          
-         <LinkChakra as='a' href="tel:44997287173">
+        <Button
+          bg="transparent"
+          border="1px solid black"
+          w="90vw"
+          style={{ textDecoration: "none" }}
+        >
+          <LinkChakra as="a" href={`tel:${data.emergency_contact.phone}`}>
             <Text as="a" fontSize="1rem" lineHeight="19px" fontWeight={400}>
               Liga agora
             </Text>
-            </LinkChakra>
-          
+          </LinkChakra>
         </Button>
       </Stack>
     </Stack>

@@ -4,6 +4,7 @@ import {
   Flex,
   Icon,
   Link as LinkChakra,
+  Spinner,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -14,41 +15,62 @@ import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 import { MdArrowBackIos } from "react-icons/md";
 import Link from "next/link";
 import { api } from "../../services/api";
-import { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 
 
 export function Profile() {
   const { asPath } = useRouter();
-const [profile, setProfile] = useState<any>({})
 
-  useEffect(() => {
-    api.get("/profile").then((response) => {setProfile(response.data)}).catch((err) => {console.log(err)});
-  }, []);
 
+  const { data, isLoading } = useQuery("Profile", async () => {
+    const response = await api.get("/profile");
+
+    const data = await response.data;
+
+    return data;
+  });
+
+    const dataNascimento = useQuery("DataMedicalInformations", async () => {
+      const response = await api.get("/medical-profile");
+  
+      const data = await response.data;
+  
+      return data;
+    });
+
+
+
+  
   if (asPath === "/") {
     return (
       <Flex align="center">
-        <Stack maxW="31rem" align="center">
+        { isLoading ? (
+          <Flex justify="center">
+            <Spinner/>
+          </Flex>
+        ) : (
+          <Stack maxW="31rem" align="center">
           <Avatar
             boxSize="7.5rem"
-            name= {profile.name}
-            src={profile.avatar_url}
+            name= {data.name}
+            src={data.avatar_url}
             _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
             style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
-            {profile.name}
+            {data.name}
           </Text>
           <Text align="center" p={3} pb={6}>
-          {profile.bio}
+          {data.bio}
           </Text>
           <SocialNetworks />
         </Stack>
+        )}
       </Flex>
     );
   }
 
-  const publishedAt = new Date("2002-06-19T00:00:00");
+  const publishedAt = new Date(Date.parse (dataNascimento.data.birthdate));
 
   const publishedDateFormated = format(publishedAt, "d 'de' LLLL',' Y", {
     locale: ptBR,
@@ -59,7 +81,13 @@ const [profile, setProfile] = useState<any>({})
 
   return (
     <>
-      <Stack mr="auto" ml={["1rem", "5rem"]}>
+      {isLoading ? (
+        <Flex>
+          <Spinner/>
+        </Flex>
+      ) : (
+        <>
+        <Stack mr="auto" ml={["1rem", "5rem"]}>
         <Link href="/">
           <LinkChakra as="a" style={{ textDecoration: "none" }}>
             <Button
@@ -83,13 +111,13 @@ const [profile, setProfile] = useState<any>({})
         <Stack maxW="31rem" align="center">
           <Avatar
             boxSize="7.5rem"
-            name= {profile.name}
-            src={profile.avatar_url}
+            name= {data.name}
+            src={data.avatar_url}
             _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
             style={{ transition: "0.5s" }}
           ></Avatar>
           <Text align="center" fontSize="1.875rem" fontWeight="400">
-            {profile.name}
+            {data.name}
           </Text>
           <Text as="p">
             <Text as="span"> {publishedDateFormated} </Text>
@@ -103,6 +131,8 @@ const [profile, setProfile] = useState<any>({})
           </Text>
         </Stack>
       </Flex>
+        </>
+      )}
     </>
   );
 }
