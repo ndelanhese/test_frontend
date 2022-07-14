@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Flex,
@@ -15,8 +15,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { MdArrowForwardIos } from "react-icons/md";
+import { api } from "../../services/api";
 
-export function ModalConfirmation() {
+interface TextProps{
+  text: string
+}
+
+
+export function ModalConfirmation({text}: TextProps) {
   function BackdropExample() {
     const OverlayOne = () => (
       <ModalOverlay
@@ -27,6 +33,35 @@ export function ModalConfirmation() {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState(<OverlayOne />);
+
+    let [resultado, setResultado] = useState("")
+
+   function responseOk(){
+    setResultado("Inscrição realizada com sucesso!") 
+    setOverlay(<OverlayOne />);
+    onOpen();
+    
+   }
+
+   async function handleNewsletterSubmit(){
+
+      try{
+        const response = await api.post("/newsletter", {
+          email: text
+        })
+  if(response.status == 204){
+        responseOk()
+      }
+      }catch(err){
+        setResultado("Não foi possível realizar a inscrição!")
+        setOverlay(<OverlayOne />);
+        onOpen();
+      }
+      
+      
+
+     
+    }
 
     return (
       <>
@@ -41,8 +76,7 @@ export function ModalConfirmation() {
         
           }}
           onClick={() => {
-            setOverlay(<OverlayOne />);
-            onOpen();
+           handleNewsletterSubmit()
           }}
         >
           <Icon as={MdArrowForwardIos} />
@@ -59,7 +93,7 @@ export function ModalConfirmation() {
                   fontWeight={400}
                   align="center"
                 >
-                  Inscrição Realizada com sucesso!
+                  {resultado}
                 </Text>
 
                 <Button
