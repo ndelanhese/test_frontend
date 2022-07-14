@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import {  useRouter } from "next/router";
 import { format, formatDistanceToNowStrict } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
@@ -18,9 +18,9 @@ import { api } from "../../services/api";
 import { useQuery } from 'react-query';
 
 
-export function Profile() {
-  const { asPath } = useRouter();
 
+export function Profile() {
+  const { asPath, push } = useRouter();
 
   const { data, isLoading } = useQuery("Profile", async () => {
     const response = await api.get("/profile");
@@ -44,6 +44,7 @@ export function Profile() {
   let publishedDateFormated
   let publishedDateRelativeToNow 
 
+ try {
   { !dataNascimento.isLoading &&
     (
       
@@ -57,6 +58,9 @@ export function Profile() {
       locale: ptBR,
     }))
   }
+ } catch (error) {
+  push("/")
+ }
 
 
   if (asPath === "/") {
@@ -88,63 +92,67 @@ export function Profile() {
     );
   }
 
-  
+  try{
 
-  return (
-    <>
-      {isLoading ? (
-        <Flex>
-          <Spinner/>
-        </Flex>
-      ) : (
-        <>
-        <Stack mr="auto" ml={["1rem", "5rem"]}>
-        <Link href="/">
-          <LinkChakra as="a" style={{ textDecoration: "none" }}>
-            <Button
-              bg="transparent"
-              border="1px solid"
-              w="2.5rem"
-              h="2.5rem"
-              _hover={{
-                background: "black",
-                color: "white",
-                transform: "scale(1.2, 1.2)",
-                transition: "0.5s",
-              }}
-            >
-              <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
-            </Button>
-          </LinkChakra>
-        </Link>
-      </Stack>
-      <Flex>
-        <Stack maxW="31rem" align="center">
-          <Avatar
-            boxSize="7.5rem"
-            name= {data.name}
-            src={data.avatar_url}
-            _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
-            style={{ transition: "0.5s" }}
-          ></Avatar>
-          <Text align="center" fontSize="1.875rem" fontWeight="400">
-            {data.name}
-          </Text>
-          <Text as="p">
-            <Text as="span"> {publishedDateFormated} </Text>
-            <Text
-              as="time"
-              title={publishedDateFormated}
-              dateTime={publishedAt.toISOString()}
-            >
-              ({publishedDateRelativeToNow})
-            </Text>
-          </Text>
+
+    return (
+      <>
+        {isLoading ? (
+          <Flex>
+            <Spinner/>
+          </Flex>
+        ) : (
+          <>
+          <Stack mr="auto" ml={["1rem", "5rem"]}>
+          <Link href="/">
+            <LinkChakra as="a" style={{ textDecoration: "none" }}>
+              <Button
+                bg="transparent"
+                border="1px solid"
+                w="2.5rem"
+                h="2.5rem"
+                _hover={{
+                  background: "black",
+                  color: "white",
+                  transform: "scale(1.2, 1.2)",
+                  transition: "0.5s",
+                }}
+              >
+                <Icon as={MdArrowBackIos} w="1.3rem" h="1.3rem" ml="0.4rem" />
+              </Button>
+            </LinkChakra>
+          </Link>
         </Stack>
-      </Flex>
-        </>
-      )}
-    </>
-  );
+        <Flex>
+          <Stack maxW="31rem" align="center">
+            <Avatar
+              boxSize="7.5rem"
+              name= {data.name}
+              src={data.avatar_url}
+              _hover={{ transform: "scale(1.2, 1.2)", transition: "0.5s" }}
+              style={{ transition: "0.5s" }}
+            ></Avatar>
+            <Text align="center" fontSize="1.875rem" fontWeight="400">
+              {data.name}
+            </Text>
+            <Text as="p">
+              <Text as="span"> {publishedDateFormated} </Text>
+              <Text
+                as="time"
+                title={publishedDateFormated}
+                dateTime={publishedAt.toISOString()}
+              >
+                ({publishedDateRelativeToNow})
+              </Text>
+            </Text>
+          </Stack>
+        </Flex>
+          </>
+        )}
+      </>
+    );
+  }catch{
+push("/")
+  }
 }
 

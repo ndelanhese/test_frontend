@@ -1,4 +1,5 @@
 import { Stack, useBreakpointValue } from "@chakra-ui/react";
+import Head from "next/head";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Links } from "../Links/Links";
@@ -7,6 +8,8 @@ import { Profile } from "../Profile/Profile";
 import { Sidebar } from "../Sidebar/Sidebar";
 
 export function Dashboard() {
+
+
   const isWideVersion = useBreakpointValue({
     base: true,
     lg: false,
@@ -14,6 +17,9 @@ export function Dashboard() {
 
   return (
     <>
+    <Head>
+    <title>e-code | profile</title>
+    </Head>
       <Header />
       <Sidebar />
       <Stack alignItems="center" mt={["3.5rem","5.25rem"]}>
